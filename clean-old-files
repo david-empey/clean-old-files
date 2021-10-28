@@ -20,9 +20,17 @@ IFS=$'\n'
 echo ""
 echo "# Cleaning old files in $search_path"
 
-echo "  Removing Directoy Store and Thumbnail Cache"
+echo "  Removing Apple Directoy Store and Thumbnail Cache"
 find $search_path -name ".DS_Store" -delete $verbose
+find $search_path -name ".Trashes" -type d -delete $verbose
+find $search_path -name ".Spotlight-v100" -type d -delete $verbose
+#find $search_path -name ".DocumentRevisions-V100" -type d -delete $verbose
+#find $search_path -name ".fseventsd" -type d -delete $verbose
+
+echo "  Removing Windows Directoy Store and Thumbnail Cache"
 find $search_path -name "Thumbs.db" -delete $verbose
+find $search_path -name "RECYCLER" -type d -delete $verbose
+
 
 echo "  Removing empty folders"
 find $search_path -type d -empty -delete $verbose
