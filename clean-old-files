@@ -20,9 +20,6 @@ IFS=$'\n'
 echo ""
 echo "# Cleaning old files in $search_path"
 
-echo "  Removing files with access time older than 30 days ago"
-find $search_path -type f -not -newerat '30 days ago' -delete $verbose
-
 echo "  Removing Directoy Store and Thumbnail Cache"
 find $search_path -name ".DS_Store" -delete $verbose
 find $search_path -name "Thumbs.db" -delete $verbose
