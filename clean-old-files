@@ -34,7 +34,14 @@ find $search_path -name "RECYCLER" -type d -delete $verbose
 echo "  Removing Linux/Gnome Directoy Store and Thumbnail Cache"
 find $search_path -name ".Trash-*" -type d -delete $verbose
 
+echo "  Removing Partial files"
+#find $search_path -name "*.!ut" -delete $verbose
+#find $search_path -name "*.part" -delete $verbose
+
 echo "  Removing empty folders"
 find $search_path -type d -empty -delete $verbose
+
+
+
 
 IFS=$SAVEIFS
