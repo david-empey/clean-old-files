@@ -31,6 +31,9 @@ echo "  Removing Windows Directoy Store and Thumbnail Cache"
 find $search_path -name "Thumbs.db" -delete $verbose
 find $search_path -name "RECYCLER" -type d -delete $verbose
 
+echo "  Removing QNAS Thumbnail Cache"
+find $search_path -name ".@__thumb" -type d -delete $verbose 
+
 echo "  Removing Linux/Gnome Directoy Store and Thumbnail Cache"
 find $search_path -name ".Trash-*" -type d -delete $verbose
 
