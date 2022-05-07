@@ -18,7 +18,7 @@ SAVEIFS=$IFS
 IFS=$'\n'
 
 echo ""
-echo "# Cleaning old files in $search_path"
+echo "  Cleaning old files in $search_path"
 
 echo "  Removing Apple Directoy Store and Thumbnail Cache"
 find $search_path -name ".DS_Store" -delete $verbose
@@ -26,6 +26,7 @@ find $search_path -name ".Trashes" -type d -delete $verbose
 find $search_path -name ".Spotlight-v100" -type d -delete $verbose
 #find $search_path -name ".DocumentRevisions-V100" -type d -delete $verbose
 #find $search_path -name ".fseventsd" -type d -delete $verbose
+find $search_path -name ".AppleDB" -type d -delete $verbose
 
 echo "  Removing Windows Directoy Store and Thumbnail Cache"
 find $search_path -name "Thumbs.db" -delete $verbose
@@ -37,7 +38,7 @@ find $search_path -name ".@__thumb" -type d -delete $verbose
 echo "  Removing Linux/Gnome Directoy Store and Thumbnail Cache"
 find $search_path -name ".Trash-*" -type d -delete $verbose
 
-echo "  Removing Partial files"
+echo "  Removing Partial Torrent files"
 #find $search_path -name "*.!ut" -delete $verbose
 #find $search_path -name "*.part" -delete $verbose
 
