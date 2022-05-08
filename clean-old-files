@@ -22,11 +22,16 @@ echo "  Cleaning old files in $search_path"
 
 echo "  Removing Apple Directoy Store and Thumbnail Cache"
 find $search_path -name ".DS_Store" -delete $verbose
+find $search_path -name ".Trash" -type d -delete $verbose
 find $search_path -name ".Trashes" -type d -delete $verbose
-find $search_path -name ".Spotlight-v100" -type d -delete $verbose
-#find $search_path -name ".DocumentRevisions-V100" -type d -delete $verbose
-#find $search_path -name ".fseventsd" -type d -delete $verbose
+find $search_path -name ".TemporaryItems" -type d -delete $verbose
+find $search_path -iname ".Spotlight-v100" -type d -delete $verbose
+find $search_path -name ".DocumentRevisions-V100" -type d -delete $verbose
+find $search_path -name ".fseventsd" -type d -delete $verbose
 find $search_path -name ".AppleDB" -type d -delete $verbose
+find $search_path -name ".apDiskB" -type d -delete $verbose
+
+#find $search_path -name "._*" -type f -delete $verbose
 
 echo "  Removing Windows Directoy Store and Thumbnail Cache"
 find $search_path -name "Thumbs.db" -delete $verbose
