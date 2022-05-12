@@ -30,6 +30,7 @@ find $search_path -name ".DocumentRevisions-V100" -type d -delete $verbose
 find $search_path -name ".fseventsd" -type d -delete $verbose
 find $search_path -name ".AppleDB" -type d -delete $verbose
 find $search_path -name ".apDiskB" -type d -delete $verbose
+find $search_path -name "__MACOSX" -type d -delete $verbose
 
 #find $search_path -name "._*" -type f -delete $verbose
 
